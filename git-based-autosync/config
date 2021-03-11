@@ -1,0 +1,11 @@
+#!/bin/sh
+
+#folder to sync
+cd ~/doc/gnucash
+#where is the script with sync
+~/auto/git-sync
+
+#what else?
+cd ~/doc/notebook
+~/auto/git-sync
+
