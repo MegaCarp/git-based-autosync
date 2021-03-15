@@ -4,7 +4,7 @@ Description=Automatically does git push and pull on a number of repos
 
 [Service]
 Type=simple
-ExecStart=/home/justin/auto/autosync-repos.sh
+ExecStart=/home/personal/auto/autosync-repos.sh
 Nice=19
 
 [Install]
