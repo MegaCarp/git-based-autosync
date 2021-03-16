@@ -10,5 +10,5 @@ git config --bool branch.main.sync true
 
 #how to install - no root, --user is important and allows service to execute path using ~
 #path has to be absolute - beware
-systemctl --user enable /home/stashko/automation/autosync-repos.service
-systemctl --user enable /home/stashko/automation/autosync-repos.timer
+systemctl --user enable /home/stashko/automation/git-based-autosync/autosync-repos.service
+systemctl --user enable /home/stashko/automation/git-based-autosync/autosync-repos.timer
