@@ -3,7 +3,7 @@
 ##folder to sync
 #cd ~/doc/gnucash
 #where is the script with sync
-#~/auto/git-sync
+#~/automation/git-sync
 
 #what else?
 cd ~/HOWTO
