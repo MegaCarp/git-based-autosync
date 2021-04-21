@@ -1,10 +1,10 @@
-#Saved in ~/auto/autosync-repos.service
+#Saved in ~/automation/autosync-repos.service
 [Unit]
 Description=Automatically does git push and pull on a number of repos
 
 [Service]
 Type=simple
-ExecStart=/home/personal/auto/autosync-repos.sh
+ExecStart=/home/personal/automation/autosync-repos.sh
 Nice=19
 
 [Install]
