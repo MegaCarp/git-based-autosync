@@ -14,6 +14,24 @@ rclone config create gdrive drive
 
 # сюда логи
 mkdir ~/.journals
-echo -n keepass folder location? skip the ~
+
+# possibly change keepass folder (there's a default setting) . this is mainly for localization but also to futureproof
+echo -n "keepass folder location? (skip the ~): "
 read kpssdir
-d -ie 's/Documents/$kpssdir/g' rclone-normal.service
+
+if [ -z "$kpssdir" ];
+	then
+		echo 'default is ~/Documents/keepass'
+
+	else 
+		sed  "s|Documents|$kpssdir|g" rclone-normal.service
+fi
+
+# checking who's current user and putting it in for the absolute paths
+sed  "s|stashko|$USER|g" rclone-normal.service
+
+ln -s ./rclone-normal.service ~/.config/systemd/user/rclone-normal.service
+
+systemctl --user daemon-reload
+systemctl --user enable --now rclone-vfs.service
+

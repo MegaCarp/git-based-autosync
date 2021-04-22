@@ -11,7 +11,8 @@ Environment=GOMAXPROCS=2
 ExecStart=/usr/bin/rclone -vv mount gdrive:keepass /home/stashko/Documents/keepass \
   --config /home/stashko/.config/rclone/rclone.conf 
 
-StandardOutput=file:/home/stashko/.journals/rclone_mount.log
+StandardOutput=file:/home/stashko/.journals/keepass.db_rclone.mount.log
+StandardError=file:/home/stashko/.journals/keepass.db_rclone.mount_error.log
 ExecStop=/bin/fusermount -uz /home/stashko/Documents/keepass
 Restart=on-failure
 
