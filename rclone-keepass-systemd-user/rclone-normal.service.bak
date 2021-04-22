@@ -1,0 +1,19 @@
+[Unit]
+Description=RClone keepass.dbx Mount Service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=notify
+KillMode=none
+Environment=GOMAXPROCS=2
+
+ExecStart=/usr/bin/rclone -vv mount gdrive:keepass /home/stashko/Documents/keepass \
+  --config /home/stashko/.config/rclone/rclone.conf 
+
+StandardOutput=file:/home/stashko/.journals/rclone_mount.log
+ExecStop=/bin/fusermount -uz /home/stashko/Documents/keepass
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

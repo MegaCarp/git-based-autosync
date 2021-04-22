@@ -24,11 +24,11 @@ if [ -z "$kpssdir" ];
 		echo 'default is ~/Documents/keepass'
 
 	else 
-		sed -i   "s|Documents|$kpssdir|g" rclone-normal.service
+		sed  "s|Documents|$kpssdir|g" rclone-normal.service
 fi
 
 # checking who's current user and putting it in for the absolute paths
-sed -i   "s|stashko|$USER|g" rclone-normal.service
+sed  "s|stashko|$USER|g" rclone-normal.service
 
 ln -s ./rclone-normal.service ~/.config/systemd/user/rclone-normal.service
 
