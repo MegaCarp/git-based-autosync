@@ -28,7 +28,7 @@ fi
 # checking who's current user and putting it in for the absolute paths
 sed -i   "s|stashko|$USER|g" rclone-normal.service
 
-ln -s ./rclone-normal.service ~/.config/systemd/user/rclone-normal.service
+ln ./rclone-normal.service ~/.config/systemd/user/rclone-normal.service
 
 systemctl --user daemon-reload
 systemctl --user enable --now rclone-normal.service
