@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# [CHANGE_HERE]
-
 REQUIRED_PKG="rclone"
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $REQUIRED_PKG|grep "install ok installed")
 echo Checking for $REQUIRED_PKG: $PKG_OK
@@ -16,7 +14,7 @@ rclone config create gdrive drive
 mkdir ~/.journals
 
 # possibly change keepass folder (there's a default setting) . this is mainly for localization but also to futureproof
-echo -n "keepass folder location? (skip the ~): "
+echo -n "keepass folder location? (skip the ~, default is ~/Documents/): "
 read kpssdir
 
 if [ -z "$kpssdir" ];
